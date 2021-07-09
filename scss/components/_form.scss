@@ -81,6 +81,7 @@
 		@include text(var(--color-grey),14px,18px,500);
 	}
 	&__text {
+		padding: 10px;
 		width: 250px;
 		margin-bottom: 25px;
 		@include text(var(--color-grey),14px,18px,500);
