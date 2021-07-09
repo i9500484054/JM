@@ -1,0 +1,138 @@
+// @include text($color, $font-size, $line-height, $font-weight)
+@mixin text($color, $font-size, $line-height, $font-weight) {
+  color: $color;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
+
+@mixin bg($color,$border-size, $border-color) {
+  background: $color;
+  border: $border-size solid $border-color;
+}
+
+@mixin bg-img($bg,$bg-url) {
+  background-color:$bg;
+  background-image:$bg-url;
+  background-repeat: no-repeat;
+  background-position:center center;
+  background-size:100% 100%;
+}
+
+// @include before($top,$left,$width,$height,$bg,$bg-url,$y,$x)
+@mixin before($top,$left,$width,$height,$bg,$bg-url,$y,$x) {
+    content: "";
+  
+    position: absolute;
+  
+    top: $top;
+    left: $left;
+  
+    width: $width;
+    height: $height;
+  
+    background-color:$bg;
+    background-image:$bg-url;
+    background-repeat: no-repeat;
+    background-position: $y $x;
+}
+// @include after($top,$left,$width,$height)
+@mixin after($top,$left,$width,$height) {
+    content: "";
+  
+    position: absolute;
+  
+    top: $top;
+    left: $left;
+  
+    width: $width;
+    height: $height;
+  
+    background-color:#000000;
+}
+
+////////////
+// Флекс-Бокс //
+////////////
+
+// @include flexbox($flex-direction, $flex-wrap, $justify-content, $align-content,$align-items)
+@mixin flexbox($flex-direction, $flex-wrap, $justify-content, $align-content,$align-items) {
+  display: flex;
+  flex-direction:$flex-direction; /*ROW  ROW-REVERSE  COLUMN  COLUMN-REVERSE */
+  flex-wrap: $flex-wrap; /*NOWRAP WRAP WRAP-REVERSE */
+  justify-content: $justify-content; /*FLEX-START  FLEX-END  CENTER  SPACE-BETWEEN  SPACE-AROUND  SPACE-EVENLY */
+  align-content: $align-content; /*FLEX-START  FLEX-END  CENTER  SPACE-BETWEEN  SPACE-AROUND  SPACE-EVENLY  STRETCH*/
+  align-items: $align-items; /*FLEX-START  FLEX-END  CENTER BASELINE  STRETCH*/
+}
+
+// @include flexbox-user($flex-direction)
+@mixin flexbox-user($flex-direction) {
+  display: flex;
+  flex-direction:$flex-direction; /*ROW  ROW-REVERSE  COLUMN  COLUMN-REVERSE */
+  flex-wrap: nowrap; /*NOWRAP WRAP WRAP-REVERSE */
+  justify-content: space-between; /*FLEX-START  FLEX-END  CENTER  SPACE-BETWEEN  SPACE-AROUND  SPACE-EVENLY */
+  align-content:center; /*FLEX-START  FLEX-END  CENTER  SPACE-BETWEEN  SPACE-AROUND  SPACE-EVENLY  STRETCH*/
+  align-items: center; /*FLEX-START  FLEX-END  CENTER BASELINE  STRETCH*/
+}
+
+@mixin item-png($url) {
+  @include before(15px,20px,40px,40px,transparent,$url,1px,2px);
+  transform: skewX(20deg);
+}
+
+
+
+////////////
+// Фигуры //
+////////////
+
+// Треугольник
+
+@mixin triangle($directions,$size,$color,$y,$x) {
+  content: ''; 
+  position: absolute; /* Абсолютное позиционирование */
+  left: $x; 
+  bottom: $y; /* Положение треугольника */
+  border: 10px solid transparent; /* Прозрачные границы */
+  $directions : $size solid green; /* Добавляем треугольник вниз*/
+  // border-top: 10px solid $color; /* Добавляем треугольник вниз*/
+  // border-bottom: 10px solid $color; /* Добавляем треугольник вверх*/
+  // border-left: 10px solid $color; /* Добавляем треугольник вправо */
+  // border-right: 10px solid $color; /* Добавляем треугольник влево*/
+}
+
+// Кнопка Бургер
+
+@mixin burger($width,$height,$h-item,$color) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  width: $width;
+  height: $height;
+
+  cursor: pointer;
+
+  span {
+    height: $h-item;
+    background-color: $color;
+  }
+}
+
+// Число
+
+@mixin item-number($number,$color) {
+  content: $number;
+  
+  position: absolute;
+
+  top: 0px;
+  right: 0px;
+
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+
+  color: $color;
+  background-color: $bg-color-red;
+}

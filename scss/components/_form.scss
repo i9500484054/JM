@@ -1,0 +1,281 @@
+.main-container {
+	display: flex;
+	flex-direction: column;
+	max-width: 1440px;
+  margin: 0 auto;
+}
+
+.form-bg {
+	min-height: 300px;
+	padding-left: 20px;
+	padding-top: 20px;
+
+	@include bg-img(var(--color-white), url("../img/bg.jpg"));
+	&__logo {
+		width: 150px;
+		height: 50px;
+	}
+}
+
+.form-container {
+	padding-top: 25px;
+	padding-bottom: 25px;
+	background-color: var(--color-white);
+	&__title-wrap {
+		text-align: center;
+		margin-bottom: 25px;
+	}
+	&__title {
+    margin-bottom: 10px;
+		@include text(var(--color-basic-text), 24px,28px,300)
+	}
+	&__desc {
+		@include text(var(--color-grey), 18px,24px,300)
+	}
+}
+
+.main-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	padding-left: 20px;
+	padding-right: 20px;
+	&__element {
+		position: relative;
+		margin: 25px;
+		@include text(var(--color-basic-text), 14px,18px,500);
+		text-transform: uppercase;
+	}
+
+	&__element::before,
+	&__element::after {
+		content: "";
+
+		position: absolute;
+		top: 8px;
+
+		display: block;
+
+		width: 100px;
+		height: 1px;
+
+		background-color: var(--color-grey);
+	}
+	&__element::before {
+    right: 35px;
+	}
+	&__element::after {
+    left: 35px;
+	}
+	&__title-wrap {
+		margin-bottom: 25px;
+		text-align: center;
+	}
+	&__title {		
+    margin-bottom: 10px;
+		@include text(var(--color-basic-text),20px,24px,500);
+	}
+	&__desc {
+		@include text(var(--color-grey),14px,18px,500);
+	}
+	&__text {
+		width: 250px;
+		margin-bottom: 25px;
+		@include text(var(--color-grey),14px,18px,500);
+		text-align: left;
+
+		border-radius: 5px;
+		box-shadow: 5px 11px 15px 0px rgba(0,0,0,0.36);
+	}
+	&__label {
+		position: relative;
+
+		padding-left: 20px;
+		margin-bottom: 25px;
+		@include text(var(--color-grey), 14px,18px,500);
+		text-align: left;
+	}
+	&__checkbox {
+		position: absolute;
+		width: 1em;
+		height: 1em;
+
+		top:1px;
+		left:1px;
+
+		border: 1px solid var(--color-lightGrey); 
+
+		cursor: pointer;
+	}
+
+	&__input:checked + .main-form__checkbox {
+		border: 1px solid var(--color-blue); 
+		background-image: url(../img/checkbox.svg);
+		background-repeat: no-repeat;
+		background-position:center center;
+		background-size:100% 100%;
+	}
+
+	&__link {
+		color: var(--color-blue);
+		text-decoration: underline;
+	}
+
+	&__btn-send {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 250px;
+		height: 40px;
+
+		background-color: var(--color-blue);
+		@include text(var(--color-white),14px,18px,700);
+		border-radius: 5px;
+		
+		transition: background-color .3s ease;
+	}
+	&__btn-send:hover,
+	&__btn-send:focus {
+		color: var(--color-blue);
+		border: 1px solid var(--color-blue);
+		background: var(--color-white);
+	}
+	&__btn-send:active {
+		color: var(--color-white);
+		background: var(--color-blue);
+	}
+}
+
+.list-reg {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	&__btn {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 250px;
+		height: 40px;
+		margin-bottom: 5px;
+
+		@include text(var(--color-white),14px,18px,500);
+
+		transition: background-color .3s ease;
+	}
+
+	&__fb {
+		background-color: var(--color-btn-fb);
+	}
+
+	&__fb:focus,
+	&__fb:hover{
+		background-color: var(--color-white);
+		border: 1px solid var(--color-btn-fb);
+		color: var(--color-btn-fb);
+	}
+
+	&__fb:focus .icon-facebook:before,
+	&__fb:hover .icon-facebook:before{
+		color: var(--color-btn-fb);
+	}
+
+	&__fb:active{
+		background-color: var(--color-btn-fb);
+		color: var(--color-white);
+	}
+
+	&__in {
+		background-color: var(--color-btn-in);
+	}
+
+	&__in:focus,
+	&__in:hover{
+		background-color: var(--color-white);
+		border: 1px solid var(--color-btn-in);
+		color: var(--color-btn-in);
+	}
+
+	&__in:focus .icon-facebook:before,
+	&__in:hover .icon-facebook:before{
+		color: var(--color-btn-in);
+	}
+
+	&__in:active{
+		background-color: var(--color-btn-in);
+		color: var(--color-white);
+	}
+
+	.icon-facebook:before,
+	.icon-linkedin:before {
+		position: absolute;
+		top:13px;
+		left:15px;
+	}
+}
+
+.list-contact {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 25px;
+	&__item {
+		position: relative;
+
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 5px;
+	}
+	&__lable {
+		position: absolute;
+		top: 5px;
+    left: 5px;
+
+		@include text(var(--color-grey), 12px,14px,300);
+
+		z-index: 100;
+	}
+	&__input {
+		position: relative;
+		width: 240px;
+		padding: 20px 5px 10px;
+		border: 1px solid var(--color-grey);
+		transition: border .3s ease;
+	}
+	&__input:focus {
+		border-left: 3px solid var(--color-blue);
+	}
+	
+}
+
+.list-investor {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 25px;
+	&__label {
+		position: relative;
+		padding-left: 20px;
+		margin-right: 10px;
+		@include text(var(--color-basic-text), 12px,14px,500)
+	}
+
+	&__radio {
+		position: absolute;
+		top:1px;
+		left: 1px;
+		width: 1em;
+		height: 1em;
+		
+		border: 1px solid var(--color-lightGrey); 
+		border-radius: 50px;
+		cursor: pointer;
+	}
+	&__input:checked + .list-investor__radio {
+		border: 3px solid var(--color-blue); 
+	}
+}

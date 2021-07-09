@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Savinov-Aleksei__CCS-Task-Master</title>
+	<link rel="stylesheet" href="css/iconfont.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<section class="main-container">
+		<div class="form-bg main-container__form-bg">
+			<a class="form-bg__link" href="#"><img class="form-bg__logo" src="img/logo.svg" alt="Логотип компании"></a>
+		</div>
+		<div class="form-container main-container__form-container">
+			<div class="form-container__title-wrap">
+				<h2 class="form-container__title">Get iintoo it today</h2>
+				<p class="form-container__desc">There is no charget or obligation upon registration.</p>
+			</div>
+			<form class="main-form form-container__main-form" action="#" method="POST" enctype="multipart/form-data">
+				<ul class="list-reg main-form__list-reg">
+					<li class="list-reg__item-btn"><button class="list-reg__btn list-reg__fb icon-facebook" type="submit">Register with Facebook</button></li>
+					<li class="list-reg__item-btn"><button class="list-reg__btn list-reg__in icon-linkedin" type="submit">Register with LinkedIn</button></li>
+				</ul>
+				<span class="main-form__element">or</span>
+				<ul class="list-contact main-form__list-contact">
+					<li class="list-contact__item">
+						<label for="input-email" class="list-contact__lable">Email</label>
+						<input class="list-contact__input" type="email" value="gus.goodwin@gmail.com" id="input-email">
+					</li>
+					<li class="list-contact__item">
+						<label for="input-phone" class="list-contact__lable">Phone</label>
+						<input class="list-contact__input" type="tel" id="input-phone">
+					</li>
+				</ul>
+				<div class="main-form__title-wrap">
+					<h2 class="main-form__title">What type of investor are you?</h2>
+					<p class="main-form__desc">Select the type of investor you are below</p>
+				</div>
+				<ul class="list-investor main-form__list-investor">
+					<li class="list-investor__item">
+						<label class="list-investor__label">
+							<input class="list-investor__input visually-hidden" type="radio" name="Type-Investor" checked>
+							<span class="list-investor__radio"></span>
+							Individual
+						</label>
+					</li>
+					<li class="list-investor__item">
+						<label class="list-investor__label">
+							<input class="list-investor__input visually-hidden" type="radio" name="Type-Investor">
+							<span class="list-investor__radio"></span>
+							Business
+						</label>
+					</li>
+					<li class="list-investor__item">
+						<label class="list-investor__label">
+							<input class="list-investor__input visually-hidden" type="radio" name="Type-Investor">
+							<span class="list-investor__radio"></span>
+							IRA
+						</label>
+					</li>
+					<li class="list-investor__item">
+						<label class="list-investor__label">
+							<input class="list-investor__input visually-hidden" type="radio" name="Type-Investor">
+							<span class="list-investor__radio"></span>
+							Trust
+						</label>
+					</li>
+				</ul>
+				<p class="main-form__text">I am a natural person investing on my own behalf as a sole owner, joint tenant, or tenant in common</p>
+				<label class="main-form__label">
+					<input class="main-form__input visually-hidden" type="checkbox" required>
+					<span class="main-form__checkbox"></span>
+					I agree to the terms and receiving notifications from iintoo <a class="main-form__link" href="#">View full terms</a>
+				</label>
+				<button class="main-form__btn-send" type="submit">Create Account</button>
+			</form>
+		</div>
+	</section>
+</body>
+</html>
