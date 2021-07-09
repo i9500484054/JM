@@ -10,7 +10,7 @@
   background: $color;
   border: $border-size solid $border-color;
 }
-
+// @include bg-img($bg,$bg-url
 @mixin bg-img($bg,$bg-url) {
   background-color:$bg;
   background-image:$bg-url;
