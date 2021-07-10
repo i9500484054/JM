@@ -862,11 +862,6 @@ input[type="radio"].visually-hidden {
   right: -15px;
   width: 10px;
   height: 10px;
-  background-color: transparent;
-  background-image: url("../img/coolicon.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100% 100%;
 }
 
 .list-investor__radio {
@@ -967,5 +962,22 @@ input[type="radio"].visually-hidden {
     font-size: 16px;
     line-height: 18px;
     font-weight: 500;
+  }
+  .list-investor__label::after  { 
+    content: "";
+
+    position: absolute;
+    top: 5px;
+    right: -15px;
+
+    width: 10px;
+    height: 10px;
+
+    
+    background-color: transparent;
+    background-image: url("../img/coolicon.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
   }
 }
